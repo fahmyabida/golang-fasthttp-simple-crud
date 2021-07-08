@@ -1,0 +1,1 @@
+# golang-fasthttp-simple-crud
