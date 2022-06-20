@@ -5,6 +5,7 @@ import (
 	"fasthttp_crud/model"
 	"fasthttp_crud/util/log"
 	"fmt"
+
 	"github.com/go-pg/pg/v10"
 )
 

@@ -6,6 +6,7 @@ import (
 	"fasthttp_crud/util"
 	"fasthttp_crud/util/log"
 	"fmt"
+
 	"github.com/fasthttp/router"
 	"github.com/valyala/fasthttp"
 )
