@@ -9,5 +9,5 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/pkg/errors v0.9.1
 	github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07 // indirect
-	github.com/valyala/fasthttp v1.28.0
+	github.com/valyala/fasthttp v1.37.0
 )
