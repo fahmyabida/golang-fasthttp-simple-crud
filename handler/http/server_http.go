@@ -23,6 +23,15 @@ func NewServerHttp(iLoginUsecase handler.ILoginUsecase, iUserUsecase handler.IUs
 }
 
 func (h *ServerHttp) Routing() {
+	h.router.GET("/", func(ctx *fasthttp.RequestCtx) {
+		ctx.Response.Header.SetContentType("application/json")
+		ctx.Response.SetStatusCode(200)
+		hMap := make(map[string]interface{})
+		hMap["message"] = "pong"
+		asByteJSON, _ := json.Marshal(hMap)
+		ctx.Response.SetBody(asByteJSON)
+		fmt.Fprint(ctx)
+	})
 	h.router.POST("/login", h.Login)
 	h.router.GET("/users", h.GetAllUser)
 	h.router.GET("/user/{id}", h.GetUser)
