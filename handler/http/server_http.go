@@ -47,7 +47,7 @@ func (h *ServerHttp) Routing() {
 	h.router.POST("/user", h.CreateUser)
 	h.router.PUT("/user/{id}", h.UpdateUser)
 	h.router.DELETE("/user/{id}", h.RemoveUser)
-	portHttp := 80
+	portHttp := 8080
 	fmt.Printf("Http listen on port %v \n", portHttp)
 	fmt.Println("Ready to serve!")
 	fasthttp.ListenAndServe(fmt.Sprintf(":%v", portHttp), h.router.Handler)
