@@ -32,6 +32,15 @@ func (h *ServerHttp) Routing() {
 		ctx.Response.SetBody(asByteJSON)
 		fmt.Fprint(ctx)
 	})
+	h.router.GET("/hello", func(ctx *fasthttp.RequestCtx) {
+		ctx.Response.Header.SetContentType("application/json")
+		ctx.Response.SetStatusCode(200)
+		hMap := make(map[string]interface{})
+		hMap["message"] = "hai"
+		asByteJSON, _ := json.Marshal(hMap)
+		ctx.Response.SetBody(asByteJSON)
+		fmt.Fprint(ctx)
+	})
 	h.router.POST("/login", h.Login)
 	h.router.GET("/users", h.GetAllUser)
 	h.router.GET("/user/{id}", h.GetUser)
